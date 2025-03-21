@@ -1,4 +1,4 @@
-import { validateShortURL } from "./urlValidator";
+import { validateShortURL } from "./urlValidator.js";
 import express from "express";
 
 const app = express();

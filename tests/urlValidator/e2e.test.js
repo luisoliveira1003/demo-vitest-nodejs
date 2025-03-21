@@ -1,7 +1,7 @@
 import express from "express";
 import request from "supertest";
 import { describe, it } from "vitest";
-import { validateShortURL } from "../../src/urlValidator";
+import { validateShortURL } from "../../src/urlValidator.js";
 
 const app = express();
 app.use(express.json());

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { validateShortURL } from "../../src/urlValidator";
+import { validateShortURL } from "../../src/urlValidator.js";
 
 describe("Testes de Integração - Validador de URL", () => {
   it("Deve validar múltiplas URLs corretamente", () => {
