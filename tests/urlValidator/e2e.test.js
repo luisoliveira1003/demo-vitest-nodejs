@@ -1,6 +1,6 @@
-import { describe, it } from "vitest";
-import request from "supertest";
 import express from "express";
+import request from "supertest";
+import { describe, it } from "vitest";
 import { validateShortURL } from "../../src/urlValidator";
 
 const app = express();
@@ -14,16 +14,10 @@ app.post("/validate-url", (req, res) => {
 
 describe("Testes E2E – API de validação", () => {
   it("Deve validar uma URL correta via API", async () => {
-    await request(app)
-      .post("/validate-url")
-      .send({ url: "valid123" })
-      .expect(200, { valid: true });
+    await request(app).post("/validate-url").send({ url: "valid123" }).expect(200, { valid: true });
   });
 
   it("Deve rejeitar uma URL inválida via API", async () => {
-    await request(app)
-      .post("/validate-url")
-      .send({ url: "invalid!$" })
-      .expect(400, { valid: false });
+    await request(app).post("/validate-url").send({ url: "invalid!$" }).expect(400, { valid: false });
   });
 });
